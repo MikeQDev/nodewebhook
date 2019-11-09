@@ -19,6 +19,6 @@ echo ">>> Killing existing Docker containers"
 docker kill $(docker ps -qf "ancestor=interdapt")
 
 echo ">>> Starting Docker container"
-docker run -dp 4200:80 interdapt
+docker run -dp 5555:80 interdapt
 
 exit $?
