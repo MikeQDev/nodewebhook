@@ -6,8 +6,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.post('/webhook',function(req,res){
-var body=req.body;
-console.log('RECV: '+JSON.stringify(body));
+var branch=req.body.ref;
+var commit=req.body.head_commit;
+console.log('Got update on branch:'+branch);
+console.log(JSON.stringify(commit));
 res.end();
 });
 
